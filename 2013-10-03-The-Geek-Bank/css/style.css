@@ -1,0 +1,21 @@
+.logo {
+  height: 100px;
+  margin: 10px; }
+
+clear {
+  clear: both; }
+
+#depositTransaction, #withdrawalTransaction {
+  width: 250px;
+  float: left;
+  border: 1px solid grey;
+  margin: 10px; }
+
+h4 {
+  text-align: center; }
+
+#depositTransaction li {
+  color: green; }
+
+#withdrawalTransaction li {
+  color: red; }

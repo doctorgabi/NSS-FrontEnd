@@ -1,0 +1,546 @@
+/*Using http://oakstreetbootmakers.com/footwear as inspiration for general style.*/
+
+/*
+**********************************
+***** General Shared Styles (don't change)
+**********************************
+*/
+@import url(https://fonts.googleapis.com/css?family=Pathway+Gothic+One);
+
+html {
+  background-color: rgb(255, 254, 249);
+}
+
+body {
+  font-family: 'Pathway Gothic One', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#body_wrapper {
+  width: 960px;
+  margin: 0 auto;
+}
+
+#inner_wrapper {
+  border: 1px solid #bcbaba;
+  margin-top: 30px;
+  border-radius: 10px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+/*This is for adding borders like the ones on oakstreetboot.com */
+.border_top {
+  border-top: 1px solid #bcbaba;
+}
+
+.border_bottom {
+  border-bottom: 1px solid #bcbaba;
+}
+
+.border_around {
+  border: 1px solid #bcbaba;
+}
+
+nav {
+  display: inline;
+}
+
+p {
+  color: rgb(130, 120, 120);
+}
+
+.padded{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+article h3{
+  text-align: center;
+}
+
+/*
+***********
+*** End of General Style Section
+***********
+*/
+
+
+
+/*
+********************************************
+****This is the banner header for all pages
+********************************************
+*/
+#invisible_header{
+  height: 30px;
+}
+
+header{
+  height: 150px;
+}
+
+#header_left {
+  width: 318px;
+  height: 150px;
+  border-right: 1px solid rgb(130, 120, 120);
+  float: left;
+  font-style: italic;
+  text-align: center;
+  padding-top: 100px
+  padding-bottom: 60px;
+}
+
+#header_left p{
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgb(130, 120, 120);
+  color: rgb(130, 120, 120);
+}
+
+header > h1{
+  width: 318px;
+  float: left;
+  text-align: center;
+  line-height: 50px;
+  padding-top: 50px;
+  font-size: 50px;
+  text-transform: uppercase;
+  margin-top: 0px;
+}
+
+#header_right{
+  width: 318px;
+  height: 150px;
+  border-left: 1px solid rgb(130, 120, 120);
+  float: left;
+  font-style: italic;
+  text-align: center;
+}
+
+#header_right p{
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgb(130, 120, 120);
+  color: rgb(130, 120, 120);
+}
+
+.clear_both{
+  clear: both;
+  height: 30px;
+}
+
+header nav{
+  width: 150px;
+}
+
+header ul{
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 30px;
+}
+
+header li{
+  display: inline-block;
+  width: 80px;
+  text-align: center;
+}
+nav a{
+  text-decoration: none;
+  color: rgb(130, 120, 120);
+}
+/*
+********************************************
+****End of banner header for all pages
+********************************************
+*/
+
+/*
+********************************************
+****This is the footer for all pages
+********************************************
+*/
+footer{
+    text-decoration: none;
+    color: rgb(130, 120, 120);
+}
+
+footer p{
+   width: 200px;
+  float: left;
+  padding-left: 35px;
+}
+footer li{
+  display: inline;
+  float: left;
+  text-decoration: none;
+  padding-left: 70px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+
+/*
+********************************************
+****End of footer for all pages
+********************************************
+*/
+
+
+/*
+********************************************
+****Gabrielle's Index Page CSS
+********************************************
+*/
+
+#index_iframe {
+  margin-left: 200px;
+}
+
+.feature {
+  border:0 solid rgb(255, 254, 249);
+  margin-top: 40px;
+  text-align: center;
+}
+
+/*
+********************************************
+****End of Gabrielle's index page css
+********************************************
+*/
+
+/*
+********************************************
+****Gabrielle's Product Listing Page CSS
+********************************************
+*/
+
+.car_image{
+  width: 150px;
+  height: 100px;
+  border-radius: 8px;
+  padding-top: 5px;
+}
+
+.float {
+  width: 200px;
+  float: left;
+}
+#products_list li{
+  list-style: none;
+  text-decoration: none;
+  height: 120px;
+  width: 860px;
+  margin-bottom: 20px;
+  padding-left: 15px;
+  padding-top: 10px;
+  border-radius: 20px;
+  background-color: rgba(130, 120, 120, 0.1)
+}
+
+#products_list li:hover{
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+#products_list a{
+  color: black;
+}
+
+#products_list div{
+  float: left;
+  padding-left: 15px;
+}
+
+#products_list a:visited{
+  color: rgb(130, 120, 120);
+}
+
+
+#products_list a:hover{
+  color: rgb(70, 50, 50);
+}
+
+
+
+/*
+********************************************
+****End of Gabrielle's Product Listing page css
+********************************************
+*/
+
+
+
+/*
+********************************************
+****Ali about page css
+********************************************
+*/
+
+.enzo{
+  width: 400px;
+  margin-left: 280px;
+  border-radius: 10px;
+}
+
+.supercar{
+  margin-left: 15px;
+  width: 460px;
+  height: 259px;
+  float: left;
+  border-radius: 10px;
+}
+
+.buy{
+  position: absolute;
+  right: 180px;
+  top: 230px;
+}
+
+.buy a {
+  text-decoration: none;
+  font-family: 'Pathway Gothic One', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: black;
+  font-size: 25px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color:rgba(130, 120, 120, 0.4)
+}
+
+
+/*
+********************************************
+****End of Ali's about page
+********************************************
+*/
+
+
+
+/*
+***********
+*** ContactUs Page Style
+***********
+*/
+
+/*positioning address relative so that can absolute position phone*/
+address {
+  position: relative;
+}
+
+#reachUs {
+  font-size: 48px !important;
+  margin-left: 20px;
+  margin-top: 40px;
+}
+
+address h3 {
+  margin-left: 226px;
+  padding-top: 20px;
+}
+
+address h3 em {
+  margin: 0px 5px;
+  text-decoration: underline;
+}
+
+address p {
+  margin-left: 19px;
+}
+
+address h4 {
+  padding-left: 140px;
+  padding-top: 36px;
+  font-size: 28px;
+}
+
+address map {
+  float: left;
+  margin-left: 55px;
+}
+
+address #frankie {
+  float: right;
+  margin-right: 128px;
+}
+
+.clear {
+  clear: both;
+}
+
+#phone {
+  position: absolute;
+  right: 297px;
+  top: 21px;
+}
+
+address li {
+  display: inline;
+  list-style: none;
+}
+
+#followUs {
+  font-size: 37px;
+}
+
+address ul {
+  position: absolute;
+  left: 150px;
+  bottom: -33px;
+}
+
+a .followUsLink {
+  height: 71px;
+  border-radius: 33px;
+}
+
+/*
+***********
+*** End of ContactUs Page Style Section
+***********
+*/
+
+/*
+***********
+*** FAQs page style - START of section
+***********
+*/
+
+#faq_title {
+  font-size: 48px;
+  padding-left: 199px;
+}
+
+.faq_top_ul {
+  padding-left: 100px;
+}
+
+.faq_top_li {
+  width: 700px;
+  text-align: center;
+  list-style: none;
+  padding-bottom: 25px;
+}
+
+.faq_top_question, .faq_top_question:visited {
+  color: #333333;
+  font-size: 45px;
+}
+
+.faq_top_question:hover {
+  color: #336699;
+}
+
+main ul > * {
+  font-size: 30px;
+}
+
+main ul li {
+  padding: 0 0 30px 0;
+  width: 700px;
+  text-align: justify;
+  margin-left: 42px;
+}
+
+#talk_p {
+  position: fixed;
+  top: 409px;
+  right: 12px;
+  width: 124px;
+  color: white !important;
+  background: black;
+  padding: 16px;
+  border-top-left-radius: 21px;
+  border-bottom-right-radius: 74px;
+}
+
+#talk_link {
+  color: white;
+}
+
+
+/*
+***********
+*** FAQs page style - END of section
+***********
+*/
+
+
+/*
+***********
+*** ShoppingCart page style - START of section
+***********
+*/
+
+#cart_h3 {
+  font-size: 44px;
+  margin-left: 117px;
+}
+
+#shopping_cart_left {
+  margin-left: 117px;
+  float: left;
+}
+
+#shopping_cart_left tr:nth-child(2n-1) {
+  border-top: 1px solid #bcbaba;
+}
+
+#shopping_cart_left tr:last-child {
+  border-bottom: 1px solid #bcbaba;
+}
+
+#shopping_cart_left tr:last-child td {
+  padding-bottom: 10px;
+}
+
+#shopping_cart_left tr td:1st-child {
+  width: 450px;
+  padding-right: 20px;
+}
+
+#shopping_cart_left tr td,
+#shopping_cart_left tr td img {
+  height: 50px;
+}
+
+#shopping_cart_left td {
+  padding-right: 21px;
+}
+
+#shopping_cart_left tr span {
+  position: relative;
+  padding-bottom: 0px;
+  bottom: 18px;
+  left: 10px;
+}
+
+#shopping_cart_right {
+  float: right;
+  margin-right: 274px;
+}
+
+#shopping_cart_right tr:nth-child(2n-1) {
+  border-top: 1px solid #bcbaba;
+}
+
+
+#update_quantity {
+  clear: both;
+  margin: 120px 0 80px 400px;
+}
+
+#checkout_now {
+  clear: both;
+  margin-left: 100px;
+}
+
+#clear_cart {
+  display: block;
+  clear: both;
+}
+/*
+***********
+*** ShoppingCart page style - END of section
+***********
+*/

@@ -1,0 +1,71 @@
+/*
+Syntax error: Invalid CSS after "...ound-color:red,": expected variable (e.g. $foo), was ")"
+        on line 10 of scss/_functions.scss
+        from line 3 of scss/style.scss
+
+5:   font-size: $font-size;
+6:   line-height: $line-height;
+7:   letter-spacing: $letter-spacing;
+8: }
+9: 
+10: @mixin box_fn($margin, $padding, $border, $box-shadow, $border-radius:10px, $background-color:red,)
+11: {
+12:   margin: $margin;
+13:   padding: $padding;
+14:   border: $border;
+15:   border-radius: $border-radius;
+
+Backtrace:
+scss/_functions.scss:10
+scss/style.scss:3
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/scss/parser.rb:1145:in `expected'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/script/lexer.rb:199:in `expected!'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/script/parser.rb:476:in `assert_tok'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/script/parser.rb:348:in `block in defn_arglist!'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/script/parser.rb:347:in `loop'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/script/parser.rb:347:in `defn_arglist!'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/script/parser.rb:104:in `parse_mixin_definition_arglist'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/scss/parser.rb:1021:in `sass_script'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/scss/parser.rb:184:in `mixin_directive'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/scss/parser.rb:174:in `special_directive'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/scss/parser.rb:146:in `directive'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/scss/parser.rb:552:in `block_child'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/scss/parser.rb:545:in `block_contents'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/scss/parser.rb:82:in `stylesheet'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/scss/parser.rb:27:in `parse'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/engine.rb:342:in `_to_tree'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/engine.rb:274:in `to_tree'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:225:in `visit_import'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:100:in `visit'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `map'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:128:in `visit_root'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:100:in `visit'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:7:in `visit'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/tree/root_node.rb:20:in `render'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/engine.rb:315:in `_render'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/engine.rb:262:in `render'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/plugin/compiler.rb:362:in `update_stylesheet'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/plugin/compiler.rb:203:in `block in update_stylesheets'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/plugin/compiler.rb:201:in `each'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/plugin/compiler.rb:201:in `update_stylesheets'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/plugin/compiler.rb:283:in `block in watch'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/vendor/listen/lib/listen/multi_listener.rb:108:in `call'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/vendor/listen/lib/listen/multi_listener.rb:108:in `on_change'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/vendor/listen/lib/listen/multi_listener.rb:117:in `block in initialize_adapter'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/vendor/listen/lib/listen/adapter.rb:198:in `call'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/vendor/listen/lib/listen/adapter.rb:198:in `report_changes'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/vendor/listen/lib/listen/adapter.rb:210:in `poll_changed_dirs'
+/home/gabrielle/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/vendor/listen/lib/listen/adapters/linux.rb:48:in `block in start'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Invalid CSS after \"...ound-color:red,\": expected variable (e.g. $foo), was \")\"\A         on line 10 of scss/_functions.scss\A         from line 3 of scss/style.scss\A \A 5:   font-size: $font-size;\A 6:   line-height: $line-height;\A 7:   letter-spacing: $letter-spacing;\A 8: }\A 9: \A 10: @mixin box_fn($margin, $padding, $border, $box-shadow, $border-radius:10px, $background-color:red,)\A 11: {\A 12:   margin: $margin;\A 13:   padding: $padding;\A 14:   border: $border;\A 15:   border-radius: $border-radius;"; }

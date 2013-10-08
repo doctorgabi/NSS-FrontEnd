@@ -1,0 +1,19 @@
+th {
+  width: 100px;
+  border-bottom: 1px solid grey; }
+
+/*******styles the task color box jQuery object*****/
+.taskColor {
+  height: 15px;
+  width: 15px;
+  border: 1px solid grey;
+  float: left;
+  margin-left: 10px; }
+
+.remove {
+  margin: 0 auto; }
+
+.voteUp, .voteDown {
+  height: 25px;
+  width: 25px;
+  margin: 5px 10px; }

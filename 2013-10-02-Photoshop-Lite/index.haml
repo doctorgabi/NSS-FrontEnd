@@ -1,0 +1,24 @@
+!!! 5
+%html{lang: 'en'}
+    %head
+        %meta{charset: 'utf-8'}
+        %title HAML & SASS Template
+        %link{rel: 'stylesheet', href: 'css/normalize.css'}
+        %link{rel: 'stylesheet', href: 'css/style.css'}
+    %body
+        %h1 Photoshop Lite
+        %input#color{type: 'text', autofocus: true}
+        %input#add_color{type: 'button', value: 'Add color!'}
+        %span#brush
+        .clear
+        #colors
+        .clear
+        %input#amount{type: 'text', placeholder: '3'}
+        %input#add_box{type: 'button', value: 'Add Boxes!'}
+        #boxes
+        .clear
+
+    %script{src:'js/jquery-1.10.2.min.js'}
+    %script{src:'js/underscore-min.js'}
+    %script{src:'js/main.js'}
+

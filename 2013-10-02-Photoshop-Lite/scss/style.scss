@@ -1,0 +1,41 @@
+#color
+{
+  float: left;
+}
+
+#colors
+{
+  height: 150px;
+  border: 1px solid black;
+  margin: 20px;
+}
+
+.box
+{
+  float: left;
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+#brush
+{
+  border: 1px dashed black;
+  padding: 3px 25px;
+  margin-left: 25px;
+}
+
+.clear
+{
+  clear: both;
+}
+
+.miniBox
+{
+  float: left;
+  height: 10px;
+  width: 10px;
+  border: 1px dashed grey;
+  margin: 1px;
+}

@@ -1,0 +1,32 @@
+!!! 5
+%html{lang: 'en'}
+  %head
+    %meta{charset: 'utf-8'}
+    %title To Do table
+    %link{rel: 'stylesheet', href: 'css/normalize.css'}
+    %link{rel: 'stylesheet', href: 'css/style.css'}
+  %body
+    %h1 To Do
+    %span Due Date:
+    %input#due{type: 'text'}
+    %span Task:
+    %input#task{type: 'text'}
+    %span Color:
+    %input#color{type: 'text'}
+    %input#addTask{type: 'button', value: 'Add Task'}
+    %table
+      %tr
+        %th{colspan: '6'}
+          %h2 Task List
+      %tr.titleRow
+        %th Due Date
+        %th Task
+        %th Color
+        %th Done?
+        %th Remove?
+        %th up/down
+
+    %script{src:'js/jquery-1.10.2.min.js'}
+    %script{src:'js/underscore-min.js'}
+    %script{src:'js/main.js'}
+

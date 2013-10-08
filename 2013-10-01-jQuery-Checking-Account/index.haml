@@ -1,0 +1,18 @@
+!!! 5
+%html{lang: 'en'}
+  %head
+    %meta{charset: 'utf-8'}
+    %title HAML & SASS Template
+    %link{rel: 'stylesheet', href: 'css/normalize.css'}
+    %link{rel: 'stylesheet', href: 'css/style.css'}
+  %body
+    %p Balance:
+    %input#balance{type: 'text', value: '1000', readonly: true}
+    %input#amount{type: 'text'}
+    %input#deposit{type: 'button', value: 'Deposit'}
+    %input#withdraw{type: 'button', value: 'Withdraw'}
+
+    %script{src:'js/jquery-1.10.2.min.js'}
+    %script{src:'js/underscore-min.js'}
+    %script{src:'js/main.js'}
+
