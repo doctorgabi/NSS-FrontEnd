@@ -13,17 +13,13 @@ function initialize(){
 
   Δdb = new Firebase('https://inventory-gse.firebaseio.com/');
   Δitems = Δdb.child('items');//this sets up a pointer to a child node to the db.
-  Δdb.on('value', receivedDb); //sets up a listener
-}//when my value changes on my database,
-  //call this anonymous funtion with the argument we'll call snapshot, (moved below to new function)
-  //but could be called anything, and is provided live by the database.
-  //The 'value' event is used to read the entire contents of a Firebase location.
-  //It is triggered once with the
-  //initial data and again every time the data changes. Your event callback is
-  //passed a snapshot containing all data at that location, including child data.
-  //If no data exists, the event will trigger with an empty snapshot.
+  Δdb.once('value', receivedDb); //sets up a listener
+  Δitems.on('child_added', childAdded);
+}
 
-
+function childAdded(snapshot){
+  console.log(snapshot.val());
+}
 
 function receivedDb(snapshot){//this function gets called initially and any time the data changes. Snapshot IS ALL the data.
     var inventory = snapshot.val();
@@ -31,26 +27,18 @@ function receivedDb(snapshot){//this function gets called initially and any time
     $('#address').val(inventory.address);
 
 
-
     items = [];
 
-    if(inventory.items){
-      for(var property in inventory.items){
-        console.log(inventory.items[property]);
-        items.push(inventory.items[property]);
-      }
+    for(var property in inventory.items){
+      var item = inventory.items[property];
+      items.push(item);
     }
-    // if(inventory.items){//does it exist? true or false
-    //   items = inventory.items;
-    // }else{
-    //   items = [];
-    // }
 
-    // var $header = $('#items tr:first-child').detach();
-    // $('#items').empty().append($header);
-    // for(var i = 0; i < items.length; i++){
-    //   createRow(items[i]);
-    // }
+    var $header = $('#items tr:first-child').detach();
+    $('#items').empty().append($header);
+    for(var i = 0; i < items.length; i++){
+      createRow(items[i]);
+    }
   }
 
 function save(){
