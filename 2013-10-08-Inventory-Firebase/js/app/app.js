@@ -18,7 +18,9 @@ function initialize(){
 }
 
 function childAdded(snapshot){
-  console.log(snapshot.val());
+  var newChildItem = snapshot.val();
+  createRow(newChildItem);
+  items.push(newChildItem);
 }
 
 function receivedDb(snapshot){//this function gets called initially and any time the data changes. Snapshot IS ALL the data.
