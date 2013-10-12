@@ -4,7 +4,7 @@
 <head>
   <meta charset='utf-8'>
   <meta content='width=device-width' name='viewport'>
-  <title>Foundation 4 Inventory System</title>
+  <title>Foundation 4 Stock Market</title>
   <link href='css/normalize.css' rel='stylesheet'>
   <link href='css/foundation.css' rel='stylesheet'>
   <link href='css/app.css' rel='stylesheet'>
@@ -13,61 +13,55 @@
 <body>
   <div class='row'>
     <div class='small-12 columns'>
-      <h1>Inventory System</h1>
+      <h1>Stocks Tracker</h1>
     </div>
   </div>
   <div class='row'>
     <div class='small-2 columns'>
-      <input id='person' placeholder='Full Name' type='text'>
-    </div>
-    <div class='small-8 columns'>
-      <input id='address' placeholder='Address' type='text'>
+      <input autofocus id='funds' placeholder='$0.00' type='text'>
     </div>
     <div class='small-2 columns'>
-      <input class='button small radius' id='save' type='button' value='Save'>
+      <input class='button radius small success' id='addFunds' type='button' value='Add Funds'>
+    </div>
+    <div class='small-2 columns'>
+      <h6>Available Funds:</h6>
+    </div>
+    <div class='small-2 columns'>
+      <input id='availableFunds' placeholder='$0.00' readonly='true' type='text'>
+    </div>
+    <div class='small-2 columns'>
+      <h6>Total stock value:</h6>
+    </div>
+    <div class='small-2 columns'>
+      <input id='totalStockValue' placeholder='$0.00' readonly='true' type='text'>
     </div>
   </div>
   <div class='row'>
-    <div class='small-3 columns'>
-      <span>Grand Total Value of Stuff:</span>
-    </div>
-    <div class='small-9'>
-      <span id='total'></span>
-    </div>
-  </div>
-  <div class='row'>
     <div class='small-2 columns'>
-      <input autofocus id='name' placeholder='Item Name' type='text'>
-    </div>
-    <div class='small-1 columns'>
-      <input id='amount' placeholder='Count' type='text'>
-    </div>
-    <div class='small-1 columns'>
-      <input id='value' placeholder='Cost' type='text'>
+      <input id='symbol' placeholder='input symbol' type='text'>
     </div>
     <div class='small-2 columns'>
-      <input id='room' placeholder='Which Room' type='text'>
+      <input id='quantity' placeholder='input quantity' type='text'>
+    </div>
+    <div class='small-4 columns'>
+      <input class='button radius small success' id='buy' type='button' value='Buy Stocks'>
     </div>
     <div class='small-2 columns'>
-      <input id='condition' placeholder='Item Condition' type='text'>
+      <input id='interval' type='text'>
     </div>
     <div class='small-2 columns'>
-      <input id='date' placeholder='Purchase Date' type='text'>
-    </div>
-    <div class='small-2 columns'>
-      <input class='button small success radius' id='add' type='button' value='Add Item'>
+      <input class='button radius small success' id='etInterval' type='button' value='Update Frequency'>
     </div>
   </div>
   <div class='row'>
     <div class='small-12 columns'>
-      <table id='items'>
+      <table id='stocksTable'>
         <tr>
           <th>Name</th>
-          <th>Count</th>
-          <th>Cost</th>
-          <th>Room</th>
-          <th>Condition</th>
-          <th>Purchase Date</th>
+          <th>Symbol</th>
+          <th>Quote</th>
+          <th>Purchased</th>
+          <th>Total</th>
         </tr>
       </table>
     </div>
@@ -75,6 +69,7 @@
   <script src='js/vendor/jquery-1.10.2.js'></script>
   <script src='js/vendor/foundation.min.js'></script>
   <script src='js/vendor/underscore.js'></script>
+  <script src='js/vendor/moment.min.js'></script>
   <script src='https://cdn.firebase.com/v0/firebase.js'></script>
   <script src='js/app/app.js'></script>
 </body>

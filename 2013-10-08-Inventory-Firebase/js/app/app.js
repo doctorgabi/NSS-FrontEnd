@@ -1,8 +1,19 @@
 'use strict';
 
+//Database schema
 var Δdb;
 var Δitems;//database copy of array
-var items;//local copy of array. both need to be synched.
+var Δperson;
+var items = [];//local copy of array. both need to be synched.
+
+
+//local schema
+var db = {};
+db.person = {};
+db.items = [];
+db.statistics = {};
+db.statistics.grandTotal = 0;
+
 
 $(document).ready(initialize);
 
@@ -13,47 +24,52 @@ function initialize(){
 
   Δdb = new Firebase('https://inventory-gse.firebaseio.com/');
   Δitems = Δdb.child('items');//this sets up a pointer to a child node to the db.
-  Δdb.once('value', receivedDb); //sets up a listener
-  Δitems.on('child_added', childAdded);
+  Δperson = Δdb.child('person');
+  Δperson.on('value', personChanged);
+  Δitems.on('child_added', itemAdded);
 }
 
-function childAdded(snapshot){
-  var newChildItem = snapshot.val();
-  createRow(newChildItem);
-  items.push(newChildItem);
+
+// function sumTotalValue(item){//from personChanged and itemAdded functions
+//   var itemValue = (item.value)*(item.count);
+//   db.statistics.grandTotal += itemValue;
+//   $('#total').text('$' + db.statistics.grandTotal + '.00');
+// }
+
+
+function itemAdded(snapshot){//from items.on event handler
+  var newItem = snapshot.val();
+  createRow(newItem);
+  db.items.push(newItem);
+  sumTotalValue(newItem);
 }
 
-function receivedDb(snapshot){//this function gets called initially and any time the data changes. Snapshot IS ALL the data.
-    var inventory = snapshot.val();
-    $('#person').val(inventory.fullName);
-    $('#address').val(inventory.address);
 
+function personChanged(snapshot){//from person.on event handler
+  var person = snapshot.val();
 
-    items = [];
-
-    for(var property in inventory.items){
-      var item = inventory.items[property];
-      items.push(item);
-    }
-
-    var $header = $('#items tr:first-child').detach();
-    $('#items').empty().append($header);
-    for(var i = 0; i < items.length; i++){
-      createRow(items[i]);
-    }
+  try{
+    $('#person').val(person.fullName);
+    $('#address').val(person.address);
+    db.person = person;
+  }catch(e){//e is the error that's returned if the try fails
+    console.log('You returned the following error: ' + e);
   }
+  sumTotalValue();
+}
 
-function save(){
+
+function save(){//from click save event handler
   var fullName = $('#person').val();
   var address = $('#address').val();
-  var inventory = {};
-  inventory.fullName = fullName;//giving objects properties using object syntax
-  inventory.address = address;
+  var person = {};
+  person.fullName = fullName;//giving objects properties using object syntax
+  person.address = address;
 
-  Δdb.update(inventory);//db.set() is the command for writing stuff to the database
+  Δperson.set(person);//db.set() is the command for writing stuff to the database
 }
 
-function add(){
+function add(){//from click add event handler
   var name = $('#name').val();
   var count = $('#amount').val();
   var value = $('#value').val();
@@ -69,18 +85,20 @@ function add(){
   item.condition = condition;
   item.date = date;
 
-  Δitems.push(item);//we just made our db Δitems set as our local items array
+  Δitems.push();//we just made our db Δitems set as our local items array
   //we need to give Firebase 2 things, a key and a value.
 }
 
-function createRow(item){
+function createRow(snapshot){//from itemAdded function
   var row = '<tr><td class="name"></td><td class="count"></td><td class="value"></td><td class="room"></td><td class="condition"></td><td class="date"></td></tr>';
   var $row = $(row);
+  debugger;
+
 
   $row.children('.name').text(item.name);
   //this is searching the children of $row (which are all 'td') for one with a class of '.name'
   $row.children('.count').text(item.count);
-  $row.children('.value').text(item.value);
+  $row.children('.value').text('$' + item.value);
   $row.children('.room').text(item.room);
   $row.children('.condition').text(item.condition);
   $row.children('.date').text(item.date);

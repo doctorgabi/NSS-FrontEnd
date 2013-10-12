@@ -1,0 +1,60 @@
+!!! 5
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+%head
+  %meta{charset: "utf-8"}
+  %meta{name: "viewport", content: "width=device-width"}
+  %title Foundation 4 Stock Market
+  %link{rel: "stylesheet", href: "css/normalize.css"}
+  %link{rel: "stylesheet", href: "css/foundation.css"}
+  %link{rel: "stylesheet", href: "css/app.css"}
+  %script{src: "js/vendor/custom.modernizr.js"}
+%body
+  .row
+    .small-12.columns
+      %h1 Stocks Tracker
+
+  .row
+    .small-2.columns
+      %input#funds{type: 'text', autofocus: true, placeholder: '$0.00'}
+    .small-2.columns
+      %input#addFunds.button.radius.small.success{type: 'button', value: 'Add Funds'}
+    .small-2.columns
+      %h6 Available Funds:
+    .small-2.columns
+      %input#availableFunds{type: 'text', readonly: 'true', placeholder: '$0.00'}
+    .small-2.columns
+      %h6 Total stock value:
+    .small-2.columns
+      %input#totalStockValue{type: 'text', readonly: 'true', placeholder: '$0.00'}
+
+
+  .row
+    .small-2.columns
+      %input#symbol{type: 'text', placeholder: 'input symbol'}
+    .small-2.columns
+      %input#quantity{type: 'text', placeholder: 'input quantity'}
+    .small-4.columns
+      %input#buy.button.radius.small.success{type: 'button', value: 'Buy Stocks'}
+    .small-2.columns
+      %input#interval{type: 'text'}
+    .small-2.columns
+      %input#etInterval.button.radius.small.success{type: 'button', value: 'Update Frequency'}
+
+  .row
+    .small-12.columns
+      %table#stocksTable
+        %tr
+          %th Name
+          %th Symbol
+          %th Quote
+          %th Purchased
+          %th Total
+
+
+  %script{src: 'js/vendor/jquery-1.10.2.js'}
+  %script{src: 'js/vendor/foundation.min.js'}
+  %script{src: 'js/vendor/underscore.js'}
+  %script{src: 'js/vendor/moment.min.js'}
+  %script{src: 'https://cdn.firebase.com/v0/firebase.js'}
+  %script{src: 'js/app/app.js'}

@@ -1,2 +1,5 @@
 table#items {
   width: 100%; }
+
+#total {
+  align-content: left; }
