@@ -22,9 +22,11 @@ function initialize(){
   Δstocks = Δdb.child('stocks');
   $('#addFunds').click(addFunds);
   $('#buy').click(getStockQuote);
+  // $('#setInterval').click(trackLivePrices);
   Δstocks.on('child_added', createRow);
   ΔtotalStockValue.on('value', updateTotalStockValue);
   ΔavailableFunds.on('value', updateAvailableFunds);
+
 }
 
 //-----------------------------------------------------------------------//
@@ -65,16 +67,52 @@ function getStockQuote(){//from event handler (click 'buy')
       stock.symbol = symbol;
       stock.price = price;
       stock.quantity = parseInt($('#quantity').val(), 10);
+      db.stocks.push(stock);
       Δstocks.push(stock);
       spendAvailableFunds(total);
     }//end if/else
 
     $('#symbol').val('');
     $('#quantity').val('');
-
-
   });//end getJSON
 }//end getStockQuote
+
+// function trackLivePrices(){
+//   if(!$('#interval').val()){
+//     alert('please add an update frequency in seconds');
+//   }else{
+//     for(var i = 0; i < db.stocks.length; i++){
+//       console.log[i];
+//       // getNewStockPrices(db.stocks[i]);
+//     }//end for loop
+//   }//end if else
+// }//end trackLivePrices function
+
+
+// function getNewStockPrices(){
+//   // debugger;
+//   var symbol = db.stocks.symbol;
+//   $.getJSON('http://dev.markitondemand.com/Api/Quote/jsonp?callback=?', symbol, function(snapshot){
+//     var stock = {};
+//     console.log(stock.LastPrice);
+//   });
+// }
+
+
+
+//   var name = snapshot.Data.Name;
+//   var symbol = snapshot.Data.Symbol;
+//   var price = snapshot.Data.LastPrice;
+//   var quantity = parseInt(db.stocks[i].quantity, 10);
+//   var total = price * quantity;
+
+//   stock.name = name;
+//   stock.symbol = symbol;
+//   stock.price = price;
+//   stock.quantity = quantity;
+//   stock.total = total;
+//   //add the % change, add an if statement class and a css row color then make the row
+
 
 
 //-----------------------------------------------------------------------//
