@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset='utf-8'>
+  <meta content='width=device-width' name='viewport'>
+  <title>Stock Plots</title>
+  <link href='css/normalize.css' rel='stylesheet'>
+  <link href='css/foundation.css' rel='stylesheet'>
+  <link href='css/app.css' rel='stylesheet'>
+  <script src='js/vendor/custom.modernizr.js'></script>
+</head>
+<body>
+  <div class='row'>
+    <div class='small-12 columns'>
+      <h1>Stock Plots</h1>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='small-3 columns'>
+      <h6>add funds:</h6>
+    </div>
+    <div class='small-2 columns'>
+      <h6>stock symbol:</h6>
+    </div>
+    <div class='small-4 columns'>
+      <h6>quantity:</h6>
+    </div>
+    <div class='small-3 columns'>
+      <h6>delay:</h6>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='small-2 columns'>
+      <input autofocus='true' id='funds' type='text'>
+    </div>
+    <div class='small-1 columns'>
+      <input class='button radius small success' id='addFunds' type='button' value='Add'>
+    </div>
+    <div class='small-2 columns'>
+      <input id='symbol' type='text'>
+    </div>
+    <div class='small-2 columns'>
+      <input id='quantity' type='text'>
+    </div>
+    <div class='small-2 columns'>
+      <input class='button radius small success' id='buy' type='button' value='BUY!'>
+    </div>
+    <div class='small-1 columns'>
+      <input id='delayTime' type='text'>
+    </div>
+    <div class='small-2 columns'>
+      <input class='button radius small success' id='delay' type='button' value='set delay'>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='small-12 columns'>
+      <h1></h1>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='small-2 columns'>
+      <h6 class='right'>CASH:</h6>
+    </div>
+    <div class='small-2 columns'>
+      <input id='cash' type='text'>
+    </div>
+    <div class='small-3 columns'>
+      <h6 class='right'>TOTAL STOCKS VALUE:</h6>
+    </div>
+    <div class='small-2 columns'>
+      <input id='total' type='text'>
+    </div>
+    <div class='small-3 columns'></div>
+  </div>
+  <script src='js/vendor/jquery-1.10.2.js'></script>
+  <script src='js/vendor/foundation.min.js'></script>
+  <script src='js/vendor/underscore.js'></script>
+  <script src='js/vendor/moment.min.js'></script>
+  <script src='https://cdn.firebase.com/v0/firebase.js'></script>
+  <script src='js/app/app.js'></script>
+</body>

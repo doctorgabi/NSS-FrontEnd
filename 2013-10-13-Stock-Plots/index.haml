@@ -1,0 +1,67 @@
+!!! 5
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+%head
+  %meta{charset: "utf-8"}
+  %meta{name: "viewport", content: "width=device-width"}
+  %title Stock Plots
+  %link{rel: "stylesheet", href: "css/normalize.css"}
+  %link{rel: "stylesheet", href: "css/foundation.css"}
+  %link{rel: "stylesheet", href: "css/app.css"}
+  %script{src: "js/vendor/custom.modernizr.js"}
+%body
+  .row
+    .small-12.columns
+      %h1 Stock Plots
+
+  .row
+    .small-3.columns
+      %h6 add funds:
+    .small-2.columns
+      %h6 stock symbol:
+    .small-4.columns
+      %h6 quantity:
+    .small-3.columns
+      %h6 delay:
+
+
+  .row
+
+    .small-2.columns
+      %input#funds{type: 'text', autofocus: 'true'}
+    .small-1.columns
+      %input#addFunds.button.radius.small.success{type: 'button', value: 'Add'}
+    .small-2.columns
+      %input#symbol{type: 'text'}
+    .small-2.columns
+      %input#quantity{type: 'text'}
+    .small-2.columns
+      %input#buy.button.radius.small.success{type: 'button', value: 'BUY!'}
+    .small-1.columns
+      %input#delayTime{type: 'text'}
+    .small-2.columns
+      %input#delay.button.radius.small.success{type: 'button', value: 'set delay'}
+  .row
+    .small-12.columns
+      %h1
+
+  .row
+    .small-2.columns
+      %h6.right CASH:
+    .small-2.columns
+      %input#cash{type: 'text'}
+    .small-3.columns
+      %h6.right TOTAL STOCKS VALUE:
+    .small-2.columns
+      %input#total{type: 'text'}
+    .small-3.columns
+
+
+
+
+  %script{src: 'js/vendor/jquery-1.10.2.js'}
+  %script{src: 'js/vendor/foundation.min.js'}
+  %script{src: 'js/vendor/underscore.js'}
+  %script{src: 'js/vendor/moment.min.js'}
+  %script{src: 'https://cdn.firebase.com/v0/firebase.js'}
+  %script{src: 'js/app/app.js'}
