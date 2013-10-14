@@ -15,7 +15,7 @@ function initialize(){
   Δpeople = Δdb.child('people');
   $('#add').click(addPerson);
   Δpeople.on('child_added', updatePeopleView);
-  $('.name').dblclick(removePerson);
+  $('#people').on('dblclick', 'h5', removePerson);
 }
 
 
@@ -55,14 +55,12 @@ function updatePeopleView(snapshot){
   $box.children('.img').attr('src', person.photo);
   $box.children('.address').text(person.address);
   $box.children('.website').attr('href', person.website);
-  $box.children('.email').attr('mailto', person.email).text(person.email);
+  $box.children('.email').attr('href', 'mailto:' + person.email).text(person.email);
 
   $('#people').prepend($box);
 }
 
 function removePerson(){
-  alert('the click handler works!')
-  debugger;
   $(this).parent().remove();
 }
 
