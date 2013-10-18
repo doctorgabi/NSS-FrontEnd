@@ -1,0 +1,27 @@
+#top{
+  margin-top: 20px;
+}
+#history{
+  border: 1px solid rgba(150, 150, 150, 0.2);
+}
+
+#result, #history, span{
+  background-color: rgba(150, 150, 150, 0.2);
+  text-align: center;
+}
+
+li{
+  list-style-type: none;
+}
+
+li:nth-child(even){
+  background-color: white;
+}
+
+#op1, #operator, #op2, #result, #history, #sumResult, #productResult{
+  border-radius: 10px;
+}
+
+#remove{
+  margin: 10px;
+}

@@ -1,0 +1,24 @@
+html, body, #map-canvas, #left, #right{
+  height: 100%;
+}
+
+#left, #right{
+  float: left;
+}
+
+#left{
+  width: 90%;
+}
+
+#right{
+  width: 10%;
+  background-color: rgba(150, 150, 150, 0.8);
+}
+
+#map-canvas{
+  width: 100%;
+}
+
+#erase{
+  margin-top: 20px;
+}

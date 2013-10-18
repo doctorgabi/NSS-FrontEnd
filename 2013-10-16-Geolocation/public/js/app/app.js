@@ -3,26 +3,21 @@
 // Firebase Schema
 var Δdb;
 var Δpositions;
-var Δfavourites;
 // Local Schema (defined in keys.js)
 //split out for testing later.
 db.positions = [];
 db.path = [];
-db.favourites = [];
 
 $(document).ready(initialize);
 
 function initialize(){
   $(document).foundation();
-  Δdb = new Firebase(db.keys.firebase);
+  Δdb = new Firebase(db.keys.firebase);//this was what was created in keys.js
   Δpositions = Δdb.child('positions');
-  Δfavourites = Δdb.child('favourite');
   Δpositions.on('child_added', dbPositionAdded);
-  Δfavourites.on('child_added', dbFavouriteAdded);
   $('#start').click(clickStart);
   $('#erase').click(clickErase);
   $('#stop').click(clickStop);
-  $('#add').click(clickAdd);
   initMap(36, -86, 5);
   Δpositions.remove();
 }
@@ -45,14 +40,6 @@ function dbPositionAdded(snapshot){
   htmlCenterZoom(latLng);
 }
 
-function dbFavouriteAdded(snapshot){
-  var favourite = snapshot.val();
-  var fLatLong = new google.maps.LatLng(favourite.latitude, favourite.longitude);
-  db.favourites.push(favourite);
-  // db.marker.setPosition(fLatLong);
-  markFavourite(fLatLong);
-}
-
 // -------------------------------------------------------------------- //
 // -------------------------------------------------------------------- //
 // -------------------------------------------------------------------- //
@@ -64,12 +51,6 @@ function htmlAddStartIcon(latLng){
 //at which location.
 }
 
-function markFavourite(fLatLong){
-  var favouriteImage = 'img/heart.png';
-  db.marker = new google.maps.Marker({map: db.map, position: fLatLong, icon: favouriteImage});
-  // db.marker.setPosition(fLatLong);
-}
-
 function htmlInitializePolyLine(){
   var polyLine = new google.maps.Polyline({
     map: db.map,
@@ -78,12 +59,12 @@ function htmlInitializePolyLine(){
     strokeOpacity: 1.0,
     strokeWeight: 2
   });
-  db.path = polyLine.getPath();
+  db.path = polyLine.getPath();//this returns a special kind of array called an MVC array.
 }
 
 function htmlCenterZoom(latLng){
   db.map.setCenter(latLng);
-  db.map.setZoom(20);
+  db.map.setZoom(20);//1 is the world and higher no's are
 }
 // -------------------------------------------------------------------- //
 // -------------------------------------------------------------------- //
@@ -93,11 +74,12 @@ function htmlCenterZoom(latLng){
 
 function clickStart(){
   var geoOptions = {
-    enableHighAccuracy: true,
-    maximumAge        : 1000,
-    timeout           : 60000
-  };
-  db.watchId = navigator.geolocation.watchPosition(geoSuccess, geoError, geoOptions);
+    enableHighAccuracy: true,//see notes for 2013-10-16
+    maximumAge        : 1000,//updates every 1second
+    timeout           : 60000//waiting 60s for a signal from the satellite b4 timeout
+  };//can do this on one line if you want
+  db.watchId = navigator.geolocation.watchPosition(geoSuccess, geoError, geoOptions);//the latter it's an object defined just above
+  //this is like a timer. db is already defined in keys.js
 }
 
 function clickErase(){
@@ -108,19 +90,7 @@ function clickErase(){
 
 function clickStop(){
   navigator.geolocation.clearWatch(db.watchId);
-}
-
-function clickAdd(){
-  if(!$('#place').val()){
-    alert('enter the place name');
-  }else{
-    var favouriteOptions = {
-      enableHighAccuracy: true,
-      maximumAge        : 0,
-      timeout           : 60000
-    };
-    navigator.geolocation.getCurrentPosition(favouriteSuccess, favouriteError, favouriteOptions);
-  }
+  //stops the timer using the watchID that started in the clickStart function.
 }
 
 // -------------------------------------------------------------------- //
@@ -133,30 +103,16 @@ function initMap(lat, lng, zoom){
 }
 
 function geoSuccess(location) {//this is where we receive the position so it's where we should be pushing from
-  var position = {};
-  position.latitude = location.coords.latitude;
-  position.longitude = location.coords.longitude;
-  position.altitude = location.coords.altitude || 0;
-  position.time = moment().format('MMMM Do YYYY, h:mm:ss a');
-  Δpositions.push(position);
+    var position = {};
+    position.latitude = location.coords.latitude;
+    position.longitude = location.coords.longitude;
+    position.altitude = location.coords.altitude || 0;
+    position.time = moment().format('MMMM Do YYYY, h:mm:ss a');
+    Δpositions.push(position);
 }
 
 function geoError() {
   console.log('Sorry, no position available.');
-}
-
-function favouriteSuccess(location) {
-  console.log('the function is being called');
-  var favourite = {};
-  favourite.latitude = location.coords.latitude;
-  favourite.longitude = location.coords.longitude;
-  favourite.name = $('#place').val();
-  Δfavourites.push(favourite);
-  $('#place').val('');
-}
-
-function favouriteError() {
-  console.log('Sorry, no position is available.');
 }
 
 

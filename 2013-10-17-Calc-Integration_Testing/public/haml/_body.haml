@@ -1,0 +1,34 @@
+
+.row#top
+  .small-2.columns
+    %input#op1{type: 'text', autofocus: 'true'}
+  .small-1.columns
+    %input#operator{type: 'text'}
+  .small-2.columns
+    %input#op2{type: 'text'}
+  .small-1.columns
+    %input#calculate.button.small.radius.success{type: 'button', value: 'CALC'}
+  .small-2.columns
+    %input#result{type: 'text', placeholder: 'result'}
+  .small-2.columns
+    %input#negative.button.small.radius{type: 'button', value: 'Remove negative values'}
+  .small-2.columns
+
+.row
+  .small-1.columns
+    %input#sum.button.small.radius.success{type: 'button', value: 'SUM'}
+  .small-2.columns
+    %input#sumResult{type: 'text'}
+  .small-2.columns.small-offset-1
+    %input#product.button.small.radius.success{type: 'button', value: 'PRODUCT'}
+  .small-2.columns
+    %input#productResult{type: 'text'}
+  .small-2.columns
+    %input#positive.button.small.radius{type: 'button', value: 'Remove positive values'}
+  .small-1.columns
+
+.row
+  .small-4.columns
+    %h5 History:
+    %ul#history
+  .small-8.columns
