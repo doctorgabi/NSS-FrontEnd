@@ -1,0 +1,22 @@
+extends ../template/layout
+
+block content
+  h1 To do list
+  p: a(href='/') Home
+  p: a(href='/todo/new') New
+
+  - var todo = todos[0]
+
+  if todo
+    table#todos
+      thead: tr
+        each value, property in todo
+          th= property
+      tbody
+        each todo, index in todos
+          tr
+            each value, property in todo
+              td(class=property)=value
+              //- if (td('class: color'))
+              //- td(style='background-color: #{todo.color}')
+

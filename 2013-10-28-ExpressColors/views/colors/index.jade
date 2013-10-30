@@ -1,0 +1,8 @@
+extends ../template/layout
+
+block content
+  h1 colors page
+  a(href='/colors/new') New color
+  ul
+    - each color in colors
+      li(style='color:#{color}; font-size:30px;')= color
