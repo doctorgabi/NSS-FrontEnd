@@ -16,7 +16,5 @@ block content
         each todo, index in todos
           tr
             each value, property in todo
-              td(class=property)=value
-              //- if (td('class: color'))
-              //- td(style='background-color: #{todo.color}')
+             td(class=property, style=property==="color"? "background-color:#{todo.color}" : "" )= value
 

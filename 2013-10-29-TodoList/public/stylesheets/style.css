@@ -6,3 +6,10 @@ body {
 a {
   color: #00B7FF;
 }
+thead > tr > th:first-child{
+  color: white;
+}
+.colorBox{
+  height: 20px;
+  width: 20px;
+}
