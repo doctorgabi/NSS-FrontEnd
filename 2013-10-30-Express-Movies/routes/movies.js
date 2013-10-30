@@ -28,3 +28,31 @@ exports.delete = function(req, res){
   db.write(file, movies);
   res.redirect('/movies');
 }
+
+/*
+ * GET /movies/new
+ */
+exports.new = function(req, res){
+  res.render('movies/new', { title: 'New: Movie'});
+}
+
+/*
+ * POST /movies
+ */
+exports.create = function(req, res){
+  var title = req.body.title;
+  var image = req.body.image;
+  var color = req.body.color;
+  var rated = req.body.rated;
+  var studio = req.body.studio;
+  var gross = req.body.gross;
+  var numTheatres = req.body.numTheatres;
+
+  var movies = db.read(__dirname + '/../db/movies.json');
+
+  var movie = {title: title, image: image, color: color, rated: rated, studio: studio, gross: gross, numTheatres: numTheatres};
+  movies.push(movie);
+
+  db.write(__dirname + '/../db/movies.json', movies);
+  res.redirect('/movies');
+};

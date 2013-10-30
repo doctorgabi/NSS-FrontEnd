@@ -1,0 +1,31 @@
+extends ../template/layout
+include ../mixins/form-helper
+
+block content
+  .row
+    .small-4.columns
+      h2 New Movie
+      p: a.button.small.radius(href= '/movies') Movies Page
+  .row
+    .small-6.columns
+      form(action='/movies', method='post')
+        .row
+          .small-6.columns
+            mixin field('title', 'Title', 'Jaws', true)
+          .small-6.columns
+            mixin field('image', 'Image URL')
+        .row
+          .small-6.columns
+            mixin field('color', 'Color', 'red')
+          .small-6.columns
+            mixin field('rated', 'Rated', 'R')
+        .row
+          .small-6.columns
+            mixin field('studio', 'Studio', 'Paramount')
+          .small-6.columns
+            mixin field('gross', 'Gross', '2000000')
+        .row
+          .small-6.columns
+            mixin field('numTheatres', 'Number of Theatres', '200')
+          .small-6.columns
+            button(type='submit') Save Movie
