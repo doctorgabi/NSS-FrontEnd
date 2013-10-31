@@ -1,0 +1,32 @@
+@base: #aabbcc;
+
+body{
+  background-color: @base;
+}
+#content{
+    height:300px;
+    background-color: @base + #111111;
+}
+// form > fieldset > field{
+//   background-color: @base + #555555;
+// }
+.post{
+  border: 1px dashed @base + #111111;
+  margin-bottom: 20px;
+  td, th{
+    background-color: @base + #111111;
+  }
+  img{
+    height: 100px;
+    width: 80px;
+  }
+}
+.float{
+  float: left;
+}
+.clear{
+  clear: both;
+}
+.smallText{
+  font-size: 12px;
+}
