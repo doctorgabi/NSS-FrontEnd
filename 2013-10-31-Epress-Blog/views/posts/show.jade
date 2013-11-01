@@ -10,14 +10,28 @@ block content
     .small-2.columns
       a.button.small.radius(href='/posts') Posts Page
     .small-2.columns
-      a.button.small.radius.success(href='/posts/new') New Page
-    .small-6.columns
+      a.button.small.radius.success(href='/posts/new') New Post Page
+    .small-2.columns
+      form(action='posts/#{post.id}', method='post')
+        input(type='hidden', name='_method', value='delete')
+        button.relative.small.radius.alert.expand(type='submit') Delete Post
+    .small-4.columns
   .row
     .small-12.columns
-      h1= post.title
-      h2.subheader= post.author
-      img.float(src=post.image)
-      p.float= post.content
-      .clear
-      span.smallText= "|   " + post.date + "   |    "
-      span.smallText= " tags:  " + post.tags + " |"
+      #showContainer
+        .float.img
+          img.float(src=post.image)
+        .float.content
+          h1= post.title
+          p.textContent= post.content
+          p.timeTag
+            span.padding.smallText= "|"
+            span.padding.smallText= post.author
+            span.padding.smallText= "|"
+            span.padding.smallText= post.date
+            span.padding.smallText= "|"
+            span.padding.smallText= " tags:  " + post.tags
+            span.padding.smallText="|"
+        .clear
+
+

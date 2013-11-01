@@ -3,30 +3,86 @@
 body{
   background-color: @base;
 }
+
+.float{
+  float: left;
+}
+
+.clear{
+  clear: both;
+}
+
+/******************Index page *****************/
 #content{
     height:300px;
     background-color: @base + #111111;
 }
-// form > fieldset > field{
-//   background-color: @base + #555555;
-// }
+
 .post{
-  border: 1px dashed @base + #111111;
+  border-top: 1px solid @base + #111111;
   margin-bottom: 20px;
+  width: 100%;
   td, th{
     background-color: @base + #111111;
+    width: 18%;
+    text-align: center;
+    &:nth-child(4){
+      width: 28%;
+    }
+    .relative{
+      position: relative;
+      top: 7px;
+    }
   }
+}
+
+#indexContainer
   img{
-    height: 100px;
-    width: 80px;
+    width: 10%;
+    float: left;
+    margin: 2%
   }
+  p{
+    width: 82%;
+    float: left;
+    padding: 2%;
+  }
+
+.padding{
+  padding-right: 10px;
 }
-.float{
-  float: left;
-}
-.clear{
-  clear: both;
-}
+/********************Show page****************/
 .smallText{
   font-size: 12px;
 }
+
+#showContainer{
+  .content{
+    width: 70%;
+    padding-left: 20px;
+    h1{
+      text-align: center;
+    }
+    .textContent{
+      width: 100%;
+    }
+  }
+  .img{
+    width: 30%;
+    img{
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  p{
+    margin-bottom: 0;
+  }
+  .timeTag{
+    padding: 0;
+    padding-left: 2%;
+  }
+}
+.showAuthor{
+  margin-top: 30px;
+}
+/*********************************************/

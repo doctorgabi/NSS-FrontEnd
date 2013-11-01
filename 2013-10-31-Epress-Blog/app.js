@@ -41,6 +41,7 @@ app.post('/posts', posts.create);
 
 app.get('/posts/:id', posts.show);
 app.delete('/posts/:id', posts.delete);
+app.delete('/posts/posts/:id', posts.delete);
 
 app.get('/posts/:id/edit', posts.edit);
 app.put('/posts/:id', posts.update);

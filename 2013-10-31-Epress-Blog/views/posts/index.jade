@@ -10,7 +10,7 @@ block content
     .small-2.columns
       a.button.small.radius(href='/posts') Posts Page
     .small-2.columns
-      a.button.small.radius.success(href='/posts/new') New Page
+      a.button.small.radius.success(href='/posts/new') New Post Page
     .small-6.columns
   .row
     .small-12.columns
@@ -24,17 +24,20 @@ block content
                   th Author
                   th Date
                   th Tags
+                  th
               tbody
                 tr
                   td: a.button.small.success.expand(href="/posts/#{post.id}")= post.title
                   td= post.author
                   td= post.date
                   td= post.tags
-            img(src=post.image)
-            p= post.content
-            form(action='posts/#{post.id}', method='post')
-              input(type='hidden', name='_method', value='delete')
-              button.small.radius.alert(type='submit') Delete
-
+                  td
+                    form(action='posts/#{post.id}', method='post')
+                      input(type='hidden', name='_method', value='delete')
+                      button.relative.small.radius.alert.expand(type='submit') Delete
+            #indexContainer
+              img.float(src=post.image)
+              p.float= post.content
+              .clear
 
 
