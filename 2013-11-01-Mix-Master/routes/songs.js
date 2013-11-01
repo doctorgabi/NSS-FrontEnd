@@ -5,7 +5,9 @@ var Song = mongoose.model('Song');
  */
 
 exports.index = function(req, res){
-  res.render('songs/index', {title: 'Songs'});
+  Song.find(function(err, songs){
+    res.render('songs/index', {title: 'Songs', songs: songs});
+  });
 };
 
 
@@ -22,11 +24,12 @@ exports.new = function(req, res){
  */
 
 exports.create = function(req, res){
-  console.log('--before--');
-  console.log(req.body);
+  // console.log('--before--');
+  // console.log(req.body);
+  req.body.genres = req.body.genres.split(', ');
   new Song(req.body).save(function(err, song, count){
-    console.log('--after--');
-    console.log(song);
+    // console.log('--after--');
+    // console.log(song);
     res.redirect('/songs');
   });
 };
