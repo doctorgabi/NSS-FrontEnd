@@ -1,0 +1,27 @@
+@base: #88bbdd;
+@import url(http://fonts.googleapis.com/css?family=Fredericka+the+Great);
+
+body{
+  background-color: @base;
+}
+.header{
+  border: 5px solid grey;
+  border-radius: 15px;
+  margin-top: 30px;
+  h1{
+    text-align: center;
+    font-family: Fredericka the Great;
+  }
+}
+//*************************New Song Page********************//
+legend{
+  background-color: @base - #333333;
+}
+#newSong input, #lyrics{
+  background-color: @base - #222222;
+  border: none;
+  border-radius: 15px;
+  &:focus{
+    background-color: @base - #111100;
+  }
+}
