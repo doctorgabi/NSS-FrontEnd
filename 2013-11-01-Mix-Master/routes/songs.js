@@ -33,3 +33,24 @@ exports.create = function(req, res){
     res.redirect('/songs');
   });
 };
+
+/*
+ * GET /songs/:id
+ */
+
+exports.show = function(req, res){
+  Song.findById(req.params.id, function(err, song){
+    res.render('songs/show.jade', {title: 'Express', song: song});
+  });
+};
+
+/*
+ * DELETE /songs/:id
+ */
+
+exports.delete = function(req, res){
+  console.log('params = ' + req.params.id);
+  Song.findByIdAndRemove(req.params.id, function(err, post){
+    res.redirect('/songs');
+  });
+};

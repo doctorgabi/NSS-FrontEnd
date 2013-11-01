@@ -1,0 +1,23 @@
+extends ../template/layout
+
+block content
+  .row
+    .small-4.columns.small-offset-4.columns
+      .headerWrapper
+        h1.subheader Show Page
+  .row#songWrapper
+    .small-6.columns
+      h3= song.title
+      p= song.duration
+      ul
+        each genre in song.genres
+          li= genre
+      p= song.createdAt
+      p= song.lyrics
+      form(action='songs/#{song.id}', method='post')
+        input(type='hidden', name='_method', value='delete')
+        button.small.radius.alert(type='submit') Delete Song
+
+    .small-6.columns
+      audio.relative(src="/audios/#{song.filename}", controls=true)
+      img(src=song.art)

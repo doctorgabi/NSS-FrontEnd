@@ -2,20 +2,17 @@ extends ../template/layout
 
 block content
   .row
-    .small-12.columns
-      h1 Songs Page
+    .small-4.columns.small-offset-4.columns
+      .headerWrapper
+        h1.subheader Songs Page
   .row
     .small-12.columns
       #songs
         each song in songs
-          .song
+          .song.float
             h3= song.title
-            audio(src="/audios/#{song.filename}", controls=true)
-            p= song.duration
-            p= song.lyrics
-            img(src=song.art)
-            ul
-              each genre in song.genres
-                li= genre
-            p= song.createdAt
+            a(href="/songs/#{song.id}")
+              img(src=song.art)
+        .clear
+
 
