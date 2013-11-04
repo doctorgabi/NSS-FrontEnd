@@ -1,0 +1,18 @@
+form#newGenre(action='/genres/#{ genre.isNew ? "" : genre.id }', method='post')
+  if !genre.isNew
+    input(type='hidden', name='_method', value='put')
+  fieldset
+    legend= title
+    .row
+      mixin field(3, 'name', 'Name', genre.name, null, true)
+      .small-8.columns
+    .row
+      .small-2.columns.small-offset-8: a.button.radius.alert.small.expand(href='/genres') Cancel
+      .small-2.columns: button.radius.success.small.expand(type='submit') Save Genre
+
+//-isNew is a property on db objects you get for free. if the obj is already in the db it's false, if it's not it's true (=new)
+//-action='/genres/#{ genre.isNew ? "" : genre.id }
+//-if it's new make it blank, if it's not new put the genre id there.
+
+//-browsers can't do puts by them selves, you have to put a hidden variable in there.
+//-

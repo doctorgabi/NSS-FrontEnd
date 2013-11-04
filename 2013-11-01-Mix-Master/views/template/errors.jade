@@ -1,0 +1,8 @@
+if error
+  .row
+    .small-12.columns
+      .errorMessages= error.message
+  .row
+    .small-12.columns
+      each item in error.errors
+        .errorMessage= item.message

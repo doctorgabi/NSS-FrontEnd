@@ -1,0 +1,25 @@
+- var mongoose = require('mongoose');
+- var Song = mongoose.model('Song');
+- var Artist = mongoose.model('Artist');
+
+extends ../template/layout
+
+block content
+  .row
+    .small-4.columns.small-offset-4.columns
+      .headerWrapper
+        h1.subheader Show Artist
+  .row#artistWrapper
+    .small-6.columns
+      h3= artist.name
+      ul= "Songs:"
+        each song in artist.songs
+          a(href="/songs/#{song}"): li= song
+      p= "Biography:  " + artist.bio
+      form(action='artists/#{artist.id}', method='post')
+        input(type='hidden', name='_method', value='delete')
+        button.small.radius.alert(type='submit') Delete Artist
+      form(action='artists/#{artist.id}', method='get')
+        button.small.radius.success(type='submit') Edit Artist
+    .small-6.columns
+      img(src=artist.photo)

@@ -2,7 +2,7 @@
 @import url(http://fonts.googleapis.com/css?family=Fredericka+the+Great);
 
 body{
-  background-color: @base;
+  background-color: @base + #001100;
   h1{
     font-family: Fredericka the Great;
     text-align: centre;
@@ -19,41 +19,75 @@ body{
   border: 5px solid grey;
   border-radius: 15px;
   margin-top: 30px;
+  background-color: @base + #001100;
+
+  -moz-box-shadow: 5px 5px 12px #555555;
+  -webkit-box-shadow: 5px 5px 12px #555555;
+  box-shadow: 5px 5px 12px #555555;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#99ddff', endColorstr = '#557788');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#99ddff', endColorstr = '#557788')";
+
+  background-image: -moz-linear-gradient(top, @base + #112233, @base - #334455);
+  background-image: -ms-linear-gradient(top, @base + #112233, @base - #334455);
+  background-image: -o-linear-gradient(top, @base + #112233, @base - #334455);
+  background-image: -webkit-gradient(linear, center top, center bottom, from(@base + #112233), to(@base - #334455));
+  background-image: -webkit-linear-gradient(top, @base + #112233, @base - #334455);
+  background-image: linear-gradient(top, @base + #112233, @base - #334455);
+
   h1.subheader{
     text-align: center;
     font-family: Fredericka the Great;
     color: grey;
   }
 }
-//*************************Index Song Page********************//
+//*************************Index Song/Artist Page********************//
 .headerWrapper{
   text-align: center;
 }
-.song{
+.song, .artist{
   width: 32%;
   float: left;
   margin-left: 1%;
 }
-#songs{
+#songs, #artists{
   border: 5px solid grey;
   border-radius: 15px;
   margin-bottom: 20px;
+  background-color: @base + #001100;
+
+  -moz-box-shadow: 5px 5px 12px #555555;
+  -webkit-box-shadow: 5px 5px 12px #555555;
+  box-shadow: 5px 5px 12px #555555;
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = '#99ddff', endColorstr = '#557788');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = '#99ddff', endColorstr = '#557788')";
+
+  background-image: -moz-linear-gradient(left, @base + #112233, @base - #334455);
+  background-image: -ms-linear-gradient(left, @base + #112233, @base - #334455);
+  background-image: -o-linear-gradient(left, @base + #112233, @base - #334455);
+  background-image: -webkit-gradient(linear, center left, center bottom, from(@base + #112233, @base - #334455));
+  background-image: -webkit-linear-gradient(left, @base + #112233, @base - #334455);
+  background-image: linear-gradient(left, @base + #112233, @base - #334455);
+
   img{
     width: 95%;
     margin-bottom: 20px;
+    border-radius: 10px;
+    -moz-box-shadow: 5px 5px 12px #444444;
+    -webkit-box-shadow: 5px 5px 12px #444444;
+    box-shadow: 5px 5px 12px #444444;
   }
   h3{
     font-family: Fredericka the Great;
     text-align: center;
-    color: grey;
+    color: #444444;
   }
 }
 
-//*************************New Song Page********************//
+//*************************New Song/Artist Pages********************//
 legend{
   background-color: @base - #333333;
 }
-#newSong input, #lyrics{
+#newGenre input, #newSong input, #lyrics,#newArtist input, #bio{
   background-color: @base - #222222;
   border: none;
   border-radius: 15px;
@@ -62,20 +96,50 @@ legend{
   }
 }
 
+
 //*************************Show Song Page********************//
-#songWrapper{
+#songWrapper, #artistWrapper{
   border: 5px solid grey;
   border-radius: 10px;
   margin-bottom: 20px;
-  // background-color: @base + #111111;
+
+  -moz-box-shadow: 5px 5px 12px #555555;
+  -webkit-box-shadow: 5px 5px 12px #555555;
+  box-shadow: 5px 5px 12px #555555;
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = '#99ddff', endColorstr = '#557788');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = '#99ddff', endColorstr = '#557788')";
+
+  background-image: -moz-linear-gradient(left, @base + #112233, @base - #334455);
+  background-image: -ms-linear-gradient(left, @base + #112233, @base - #334455);
+  background-image: -o-linear-gradient(left, @base + #112233, @base - #334455);
+  background-image: -webkit-gradient(linear, center left, center bottom, from(@base + #112233, @base - #334455));
+  background-image: -webkit-linear-gradient(left, @base + #112233, @base - #334455);
+  background-image: linear-gradient(left, @base + #112233, @base - #334455);
+
+  h3{
+    font-family: Fredericka the Great;
+    color: #444444;
+  }
   img{
     width: 95%;
     border-radius: 15px;
-    margin-bottom: 20px;
+    margin: 20px 0 20px 0;
   }
   .relative{
     position: relative;
     left: 80px;
     margin-top: 20px;
   }
+  ul{
+    list-style-type: none;
+  }
+}
+
+//*************************Genres Page********************//
+
+#genres li{
+  list-style-type: none;
+}
+.padding{
+  padding-left: 20px;
 }

@@ -1,0 +1,15 @@
+extends ../template/layout
+include ../mixins/form-helper
+
+
+block content
+  .row
+    .small-12.columns
+      include ../template/errors
+  .row
+    .small-6.columns.small-offset-3.columns
+      .headerWrapper
+        h1.subheader New Genre Page
+  .row
+    .small-12.columns
+      include form

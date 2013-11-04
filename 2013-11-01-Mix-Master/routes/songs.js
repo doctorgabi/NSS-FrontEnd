@@ -24,15 +24,18 @@ exports.new = function(req, res){
  */
 
 exports.create = function(req, res){
-  // console.log('--before--');
-  // console.log(req.body);
-  req.body.genres = req.body.genres.split(', ');
   new Song(req.body).save(function(err, song, count){
-    // console.log('--after--');
-    // console.log(song);
-    res.redirect('/songs');
+    console.log('---error---');
+    if(err){
+      res.render('songs/new', {title: 'New Song', error: err, song: new Song()});
+    }else{
+      req.body.genres = req.body.genres.split(', ');
+      console.log('---no error---');
+      res.redirect('/songs');
+    }
   });
 };
+
 
 /*
  * GET /songs/:id
@@ -53,4 +56,12 @@ exports.delete = function(req, res){
   Song.findByIdAndRemove(req.params.id, function(err, post){
     res.redirect('/songs');
   });
+};
+
+/*
+ * PUT /songs/:id
+ */
+
+exports.update = function(req, res){
+  res.redirect('/songs' + req.params.id);
 };

@@ -4,12 +4,12 @@ block content
   .row
     .small-4.columns.small-offset-4.columns
       .headerWrapper
-        h1.subheader Show Page
+        h1.subheader Show Song Page
   .row#songWrapper
     .small-6.columns
       h3= song.title
-      p= song.duration
-      ul
+      p= "Duration: " + song.duration + " seconds"
+      ul= "Genres:"
         each genre in song.genres
           li= genre
       p= song.createdAt

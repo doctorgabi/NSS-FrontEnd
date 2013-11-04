@@ -5,12 +5,12 @@ block content
     .small-4.columns.small-offset-4.columns
       .headerWrapper
         h1.subheader Artists Page
-  //- .row
-  //-   .small-12.columns
-  //-     #songs
-  //-       each song in songs
-  //-         .song.float
-  //-           h3= song.title
-  //-           a(href="/songs/#{song.id}")
-  //-             img(src=song.art)
-  //-       .clear
+  .row
+    .small-12.columns
+      #artists
+        each artist in artists
+          .artist.float
+            h3= artist.name
+            a(href="/artists/#{artist.id}")
+              img(src=artist.photo)
+        .clear
