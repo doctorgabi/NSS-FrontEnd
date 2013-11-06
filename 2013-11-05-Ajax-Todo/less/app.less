@@ -1,14 +1,47 @@
 @base: #003344;
 
 body{
-  background-color: @base;
+background:
+  radial-gradient(black 15%, transparent 16%) 0 0,
+  radial-gradient(black 15%, transparent 16%) 8px 8px,
+  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+  background-color:#282828;
+  background-size:16px 16px;
 }
-#priority input, #todo input, #todos tr{
-  background-color: @base + #222222;
+fieldset{
+  border: 2px solid #333333;
+  border-radius: 10px;
+  background-color: @base + #001111;
+  -moz-box-shadow: 5px 3px 10px #000000;
+  -webkit-box-shadow: 5px 3px 10px #000000;
+  box-shadow: 5px 3px 10px #000000;
+  filter: progid:DXImageTransform.Microsoft.Shadow(strength = 5, direction = 117, color = '#000000');
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(strength = 5, Direction = 117, Color = '#000000')";
+
+  legend{
+    background-color: @base + #333333;
+    border-radius: 10px;
+  }
+  label{
+    color: #111111;
+  }
+}
+#priority input, #todo input, #todos tr, table, select{
+  background-color: @base + #333333;
   border: none;
   border-radius: 10px;
+  -moz-box-shadow: 5px 3px 10px #000000;
+  -webkit-box-shadow: 5px 3px 10px #000000;
+  box-shadow: 5px 3px 10px #000000;
+  filter: progid:DXImageTransform.Microsoft.Shadow(strength = 5, direction = 117, color = '#000000');
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(strength = 5, Direction = 117, Color = '#000000')";
   &:focus{
     background-color: @base + #444444;
+
   }
+}
+tr{
+  border-radius: 5px;
 }
 
