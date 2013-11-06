@@ -12,7 +12,6 @@ exports.index = function(req, res){
   });
 };
 
-
 /*
  * GET /artists/new
  */
@@ -36,6 +35,7 @@ exports.create = function(req, res){
     }
   });
 };
+
 /*
  * GET /artists/:id
  */

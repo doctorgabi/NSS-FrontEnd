@@ -1,0 +1,14 @@
+@base: #003344;
+
+body{
+  background-color: @base;
+}
+#priority input, #todo input, #todos tr{
+  background-color: @base + #222222;
+  border: none;
+  border-radius: 10px;
+  &:focus{
+    background-color: @base + #444444;
+  }
+}
+
