@@ -5,6 +5,7 @@ require('./models/todo');
 var home = require('./routes/home');
 var todos = require('./routes/todos');
 var priorities = require('./routes/priorities');
+var games = require('./routes/games');
 
 // modules
 var express = require('express');
